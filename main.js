@@ -1,4 +1,6 @@
-
+////////////////////////////////////////////////
+// Extremly Messy code,cause its my first game//
+///////////////////////////////////////////////
 
 const canvas = document.getElementById("canvasz");
 const c = canvas.getContext("2d");
@@ -517,7 +519,7 @@ function animate() {
         randominterval = Math.floor(Math.random() * 400 + 300);
         frames = 0;
     }
-    //spawn projectle
+   
 
     frames++;
 }
