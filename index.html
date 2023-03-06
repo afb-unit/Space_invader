@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="main.js" defer></script>
+    <title>space blocks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background-color: rgb(212, 157, 157);
+        }
+
+        .indication {
+            width: 100%;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'poppins';
+        }
+
+
+        canvas {
+            background-color: rgb(22, 22, 22);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="indication">
+        <h2>
+            <<== Click Space to Shoot and Arrow key to move left or right==>>
+        </h2>
+    </div>
+    <canvas id="canvasz"></canvas>
+
+
+</body>
+
+</html>
