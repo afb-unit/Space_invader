@@ -2,6 +2,8 @@
 // Extremly Messy code,cause its my first game//
 ///////////////////////////////////////////////
 
+
+
 const canvas = document.getElementById("canvasz");
 const c = canvas.getContext("2d");
 canvas.width = innerWidth;
@@ -413,7 +415,7 @@ function animate() {
             player.position.x &&
             invaderProjectile.position.x <= player.position.x + player.width
         ) {
-      
+            explosionpl.play();
             setTimeout(() => {
                 invaderProjectiles.splice(ip, 1);
                 player.opacity = 0;
@@ -458,7 +460,7 @@ function animate() {
                     projectile.position.x <= invader.position.x + invader.width
                 ) {
 
-                    explosion.play();
+                    
                     setTimeout(() => {
                         const invaderfound = grid.invaders.find(
                             (invader2) => invader2 === invader
@@ -518,7 +520,7 @@ function animate() {
         randominterval = Math.floor(Math.random() * 400 + 300);
         frames = 0;
     }
-   
+    //spawn projectle
 
     frames++;
 }
