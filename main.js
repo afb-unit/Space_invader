@@ -306,7 +306,6 @@ let game = {
     over: false
 }
 let shoot = new Audio("audio/sh.wav");
-let explosion = new Audio("audio/explosions.mp3");
 let explosionpl = new Audio("audio/playerex.wav");
 function Restart() {
     player = new Player();
@@ -414,7 +413,7 @@ function animate() {
             player.position.x &&
             invaderProjectile.position.x <= player.position.x + player.width
         ) {
-            explosionpl.play();
+      
             setTimeout(() => {
                 invaderProjectiles.splice(ip, 1);
                 player.opacity = 0;
