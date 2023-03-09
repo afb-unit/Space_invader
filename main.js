@@ -4,10 +4,12 @@
 
 
 
+
+
 const canvas = document.getElementById("canvasz");
 const c = canvas.getContext("2d");
 canvas.width = innerWidth;
-canvas.height = innerHeight-50;
+canvas.height = innerHeight - 50;
 addEventListener("keydown", ({ key }) => {
     if (game.over) return
     switch (key) {
@@ -253,7 +255,7 @@ class Grid {
             y: 0,
         };
         this.invaders = [];
-        const columns = Math.floor(Math.random() * 3 + 16);
+        const columns = Math.floor(Math.random() * 7 + 12);
         const rows = Math.floor(Math.random() * 2 + 1);
         this.width = columns * 70;
         for (let i = 0; i <= columns; i++) {
@@ -302,8 +304,8 @@ let invaderProjectiles = [];
 let particles = [];
 let particles2 = [];
 let frames = 0;
-let randominterval = Math.floor(Math.random() * 400 + 300);
-let randombullet = Math.floor(Math.random() * 20 + 25);
+let randominterval = Math.floor(Math.random() * 350 + 450);
+let randombullet = Math.floor(Math.random() * 25 + 15);
 let game = {
     over: false
 }
@@ -317,12 +319,12 @@ function Restart() {
     particles = [];
     particles2 = [];
     frames = 0;
-    randominterval = Math.floor(Math.random() * 400 + 300);
-    randombullet = Math.floor(Math.random() * 20 + 25);
+    randominterval = Math.floor(Math.random() * 350 + 450);
+    randombullet = Math.floor(Math.random() * 25 + 15);
     game = {
         over: false
     }
- 
+
 }
 
 
@@ -442,16 +444,16 @@ function animate() {
         }
 
         grid.invaders.forEach((invader, i) => {
-           
+
             invader.update({ velocity: grid.velocity });
-            if (invader.position.y  >= canvas.height) {
-                setTimeout(() => {
-                    game.over = true;
-                }, 0);
-                setTimeout(() => {
-                    Restart();
-                }, 300)
-            }
+            // if (invader.position.y == player.position.y) {
+            //     setTimeout(() => {
+            //         game.over = true;
+            //     }, 0);
+            //     setTimeout(() => {
+            //         Restart();
+            //     }, 300)
+            // }
             //bullet hit invader
             projectiles.forEach((projectile, p) => {
                 if (
@@ -460,7 +462,7 @@ function animate() {
                     projectile.position.x <= invader.position.x + invader.width
                 ) {
 
-                    
+
                     setTimeout(() => {
                         const invaderfound = grid.invaders.find(
                             (invader2) => invader2 === invader
@@ -517,7 +519,7 @@ function animate() {
     });
     if (frames % randominterval === 0) {
         grids.push(new Grid());
-        randominterval = Math.floor(Math.random() * 400 + 300);
+        randominterval = Math.floor(Math.random() * 350 + 450);
         frames = 0;
     }
     //spawn projectle
@@ -526,5 +528,3 @@ function animate() {
 }
 
 animate();
-
-
